@@ -21,15 +21,15 @@ Assuming boot2docker is installed and `init`-ed:
         $(boot2docker shellinit)
 
 
-2. Go to the project's main folder and run
+2. Go to the project's main folder docker-up:
 
-    2.1 Build (or rebuild) the docker image: 
+    - Build (or rebuild) the docker image: 
 
             make build
 
-        This will pull in a 200MB ubuntu VM image, and install all packages.
+      This will pull in a 200MB ubuntu VM image, and install all packages.
 
-    2.2 Run the dev container:
+    - Run the dev container:
 
             make rundev
 
@@ -43,9 +43,8 @@ Assuming boot2docker is installed and `init`-ed:
         root@NNNN cd /var/projects/djproject/
         root@NNNN ./manage.py runserver 0.0.0.0:8000   
 
-    
-You should be able to edit the files on your mac, 
-and watch the django server auto-reload.
+    You should be able to edit the files on your mac, 
+    and watch the django server auto-reload.
 
 
 4. To see the site in action:
