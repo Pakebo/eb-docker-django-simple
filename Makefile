@@ -12,20 +12,28 @@ build:
 
 
 
+
 # DEVELOPMENT CONTAINER 
-run_dev:
-	docker run -d -p 8080:8080 \
+start:
+	#@echo run    boot2docker start
+	#@echo run    $(boot2docker shellinit)
+rundev:
+	docker run -d -p 8000:8000 \
            -v $(CURDIR)/djproject:/var/projects/djproject \
            --name webdev   test-img-1
+	docker exec -t webdev  /usr/bin/supervisorctl stop webapp 
 	docker ps
-
+	@echo Container webdev started
 shell:
+	@echo Run /var/projects/djproject/manage.py runserver 0.0.0.0:8000   to start django dev server
 	docker exec -i -t webdev /bin/bash
+show:
+	open http://$(boot2docker ip 2>/dev/null):8080 
 
 
 
 # PRODUCTION CONTAINER
-run_prod:
+runprod:
 	docker run -d -p 8080:80   --name web   test-img-1
 	docker ps
 

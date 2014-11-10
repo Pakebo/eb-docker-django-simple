@@ -18,7 +18,7 @@ RUN apt-get update
 ##############################################################################
 # Install system python
 ##############################################################################
-RUN apt-get install -y python python-pip 
+RUN apt-get install -y python python-pip vim wget 
 
 
 ##############################################################################
@@ -51,7 +51,7 @@ ADD ./deploy/supervisor_conf.d/webapp.conf /etc/supervisor/conf.d/webapp.conf
 # add source code repos and build
 ##############################################################################
 ADD ./djproject      /var/projects/djproject
-
+# NB: this directive is not used in DEV: the docker volume overwrites /var/projects/djproject
 
 # installing python prereqs...
 RUN cd /var/projects/djproject && pip install -r requirements.txt
