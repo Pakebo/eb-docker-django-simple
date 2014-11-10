@@ -28,8 +28,7 @@ shell:
 	@echo Run /var/projects/djproject/manage.py runserver 0.0.0.0:8000   to start django dev server
 	docker exec -i -t webdev /bin/bash
 show:
-	open http://$(boot2docker ip 2>/dev/null):8080 
-
+	open http://$$(boot2docker ip 2>/dev/null):8000 
 
 
 # PRODUCTION CONTAINER
