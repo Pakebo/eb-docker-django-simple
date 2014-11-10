@@ -41,6 +41,7 @@ Assuming boot2docker is installed and `init`-ed:
     Once inside the container, go to project dir and run the django development server:
 
         root@NNNN cd /var/projects/djproject/
+        root@NNNN ./manage syncdb
         root@NNNN ./manage.py runserver 0.0.0.0:8000   
 
     You should be able to edit the files on your mac, 
@@ -55,16 +56,44 @@ Assuming boot2docker is installed and `init`-ed:
 
 
     
+    
+
+Running prod environment
+------------------------
+
+0. Obtain AWS credentials 
+   - EC2 key (for ssh-ing into machines)
+   - aws_access_key_id and aws_secret_access_key
+
+1. Install `eb` command line tool
+
+2. Associate repo with elastic beanstalk
+
+        eb init
+
+3. Check if an evnironment exists:
+
+        eb list
+    
+    if not create it
+    
+        eb create
+
+4. Deploy
+
+    eb deploy
 
 
+5. To stop all instances run: 
+
+    eb terminate
 
 
+Note: The `eb` command line uses AWS settings in  `~/.aws/config` 
 
 
+To check "cluster" status:
 
-
-
-
-
+    eb status
 
 
