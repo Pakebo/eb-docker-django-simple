@@ -3,13 +3,13 @@ help:
 	@echo Helper functions for making/managing docker images and containers
 	@echo     docker ps		: shows running containers
 	@echo     make build    : builds test-img-1 docker image   = a filesystem snapshot
-	@echo     make run_dev  : starts a container named  webdev  from image  test-img-1
+	@echo     make rundev   : starts a container named  webdev  from image  test-img-1
 	@echo     make shell    : shell into container
 
+
+# Build docker image from Dockerfile
 build: 
 	docker build -t test-img-1 .
-
-
 
 
 

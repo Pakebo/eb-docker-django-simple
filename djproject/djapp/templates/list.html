@@ -1,0 +1,10 @@
+
+{% if enrollments_list %}
+    <ul>
+    {% for en in enrollments_list %}
+        <li>member: {{ en.member_id }}, comment: {{ en.comment }} </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No enrollments yet.</p>
+{% endif %}

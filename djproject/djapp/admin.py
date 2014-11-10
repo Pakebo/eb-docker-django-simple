@@ -1,3 +1,11 @@
 from django.contrib import admin
+from djapp.models import Enrollment
 
-# Register your models here.
+class EnrollmentAdmin(admin.ModelAdmin):
+    list_display = ('member_id', 'comment', 'creation_date', 'status', )
+
+    fields = ('member_id', 'comment', 'status', )
+
+
+admin.site.register(Enrollment, EnrollmentAdmin)
+
