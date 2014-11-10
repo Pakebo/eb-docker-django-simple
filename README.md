@@ -81,12 +81,12 @@ Running prod environment
 
 4. Deploy
 
-    eb deploy
+        eb deploy
 
 
 5. To stop all instances run: 
 
-    eb terminate
+        eb terminate
 
 
 Note: The `eb` command line uses AWS settings in  `~/.aws/config` 
