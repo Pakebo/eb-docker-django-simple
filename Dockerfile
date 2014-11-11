@@ -35,6 +35,7 @@ RUN ln -s /etc/nginx/sites-available/webapp.nginxconf /etc/nginx/sites-enabled/w
 RUN groupadd webapps
 RUN useradd webapp -G webapps
 RUN mkdir -p /var/log/webapp/ && chmod 777 /var/log/webapp/
+RUN mkdir -p /var/run/webapp/ && chmod 777 /var/run/webapp/
 
 
 ##############################################################################
@@ -55,7 +56,6 @@ ADD ./djproject      /var/projects/djproject
 
 # installing python prereqs...
 RUN cd /var/projects/djproject && pip install -r requirements.txt
-RUN mkdir -p /var/projects/djproject/run && chmod 777 /var/projects/djproject/run
 #RUN cd /var/projects/djproject && \
 #    ./manage.py syncdb --noinput && \
 #    ./manage.py loaddata backend/admin_account_fixture.json && \
